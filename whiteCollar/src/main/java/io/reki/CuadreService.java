@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TopicService {
+public class CuadreService {
 	
 	@Autowired
-	private TopicRepository topicRepository;
+	private CuadreRepository cuadreRepository;
 	
 	/*private List<Topic> topics = new ArrayList<>(Arrays.asList(
 			new Topic("spring", "Spring Framework", "spring framework description"),
@@ -20,25 +20,25 @@ public class TopicService {
 			new Topic("javascript", "Javascript", "javascript description")	
 			));
 	*/
-	public List<Topic> getAllTopics(){
+	public List<Cuadre> getAllCuadres(){
 		// return topics;
-		List<Topic> topics = new ArrayList<>();
-		topicRepository.findAll().forEach(topics::add);
-		return topics;
+		List<Cuadre> cuadres = new ArrayList<>();
+		cuadreRepository.findAll().forEach(cuadres::add);
+		return cuadres;
 	}
 	
-	public Optional<Topic> getTopic(String id) {
+	public Optional<Cuadre> getCuadre(String id) {
 		//return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
-		return topicRepository.findById(id);
+		return cuadreRepository.findById(id);
 	}
 
-	public void addTopic(Topic topic) {
+	public void addCuadre(Cuadre cuadre) {
 		//topics.add(topic);
-		topicRepository.save(topic);
+		cuadreRepository.save(cuadre);
 		
 	}
 
-	public void updateTopic(String id, Topic topic) {
+	public void updateCuadre(String id, Cuadre topic) {
 		/*for(int i = 0; i< topics.size(); i++) {
 			Topic t = topics.get(i);
 			if(t.getId().equals(id)) {
@@ -46,13 +46,13 @@ public class TopicService {
 				return;
 			}
 		}*/
-		topicRepository.save(topic);
+		cuadreRepository.save(topic);
 		
 	}
 
-	public void deleteTopic(String id) {
+	public void deleteCuadre(String id) {
 		//topics.removeIf(t -> t.getId().equals(id));
-		topicRepository.deleteById(id);
+		cuadreRepository.deleteById(id);
 	}
 
 }

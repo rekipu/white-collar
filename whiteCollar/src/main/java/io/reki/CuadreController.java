@@ -15,30 +15,30 @@ import org.springframework.web.bind.annotation.RestController;
 public class CuadreController {
 	
 	@Autowired
-	private TopicService topicService;
+	private CuadreService cuadreService;
 	
 	@RequestMapping("/topics")
-	public List<Cuadre> getAllTopics() {
-		return topicService.getAllTopics();
+	public List<Cuadre> getAllCuadres() {
+		return cuadreService.getAllCuadres();
 	}
 	
 	@RequestMapping("/topics/{id}")
 	public Optional<Cuadre> getTopic(@PathVariable String id) {
-		return topicService.getTopic(id);
+		return cuadreService.getCuadre(id);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/topics")
 	public void addTopic(@RequestBody Cuadre cuadre) {
-		topicService.addTopic(topic);
+		cuadreService.addCuadre(cuadre);
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT,value="/topics/{id}")
 	public void updateTopic(@RequestBody Cuadre cuadre,@PathVariable String id) {
-		topicService.updateTopic(id, topic);
+		cuadreService.updateCuadre(id, cuadre);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE,value="/topics/{id}")
-	public void deleteTopic(@PathVariable String id) {
-		topicService.deleteTopic(id);
+	public void deleteCuadre(@PathVariable String id) {
+		cuadreService.deleteCuadre(id);
 	}
 }

@@ -1,6 +1,5 @@
 package io.reki;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,20 +11,29 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CuadreController {
+public class ShopController {
 	
 	@Autowired
-	private CuadreService cuadreService;
+	private ShopService shopService;
 	
-	
-	
-	@RequestMapping(method=RequestMethod.PUT,value="/shops/{id}/picture")
-	public void updateTopic(@RequestBody Cuadre cuadre,@PathVariable String id) {
-		cuadreService.updateCuadre(id, cuadre);
+	@RequestMapping("/shops")
+	public List<Shop> getAllShops() {
+		return shopService.getAllShops();
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE,value="/shops/{id}/picture")
+	@RequestMapping("/shops/{id}")
+	public Optional<Shop> getTopic(@PathVariable String id) {
+		return shopService.getShop(id);
+	}
+	
+	@RequestMapping(method=RequestMethod.POST,value="/shops")
+	public void addTopic(@RequestBody Shop shop) {
+		shopService.addShop(shop);
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE,value="/shops/{id}/pictures")
 	public void deleteCuadre(@PathVariable String id) {
-		cuadreService.deleteCuadre(id);
+		shopService.
 	}
+
 }

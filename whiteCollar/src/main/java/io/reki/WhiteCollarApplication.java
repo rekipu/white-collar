@@ -8,6 +8,8 @@ public class WhiteCollarApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WhiteCollarApplication.class, args);
+		
+		
 	}
 
 }

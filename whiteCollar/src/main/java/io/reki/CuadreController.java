@@ -28,4 +28,9 @@ public class CuadreController {
 	public void deleteCuadre(@PathVariable String id) {
 		cuadreService.deleteCuadre(id);
 	}
+	
+	@RequestMapping(method=RequestMethod.DELETE,value="/shops/{id}/pictures")
+	public void deleteCuadres(@PathVariable String id) {
+		
+	}
 }

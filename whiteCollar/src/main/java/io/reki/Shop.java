@@ -30,6 +30,12 @@ public class Shop {
 	public void setQuadres(ArrayList<Cuadre> quadres) {
 		this.quadres = quadres;
 	}
+	public void addQuadre(Cuadre cuadre) {
+		this.quadres.add(cuadre);
+	}
+	public void deleteCuadres() {
+		quadres.clear();
+	}
 	
 
 }

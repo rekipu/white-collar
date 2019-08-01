@@ -31,5 +31,9 @@ public class ShopController {
 		shopService.addShop(shop);
 	}
 	
+	@RequestMapping(method=RequestMethod.DELETE,value="/shops/{id}/pictures")
+	public void deleteCuadres(@PathVariable String id) {
+		
+	}
 
 }

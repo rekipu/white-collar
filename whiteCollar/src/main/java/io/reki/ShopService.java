@@ -37,5 +37,9 @@ public class ShopService {
 	public void deleteShop(String id) {
 		shopRepository.deleteById(id);
 	}
+	
+	public void deleteCuadres(String id){
+		shopRepository.delete();
+	}
 
 }

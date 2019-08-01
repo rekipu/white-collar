@@ -22,18 +22,18 @@ public class ShopController {
 	}
 	
 	@RequestMapping("/shops/{id}")
-	public Optional<Shop> getTopic(@PathVariable String id) {
+	public Optional<Shop> getName(@PathVariable String id) {
 		return shopService.getShop(id);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/shops")
-	public void addTopic(@RequestBody Shop shop) {
+	public void addShop(@RequestBody Shop shop) {
 		shopService.addShop(shop);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE,value="/shops/{id}/pictures")
 	public void deleteCuadres(@PathVariable String id) {
-		
+		shopService.deleteCuadres();
 	}
 
 }

@@ -38,8 +38,8 @@ public class ShopService {
 		shopRepository.deleteById(id);
 	}
 	
-	public void deleteCuadres(String id){
-		shopRepository.delete();
+	public void deleteCuadres(){
+		this.deleteCuadres();
 	}
 
 }
